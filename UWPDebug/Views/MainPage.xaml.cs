@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace UWPDebug.Views
 {
@@ -11,6 +12,12 @@ namespace UWPDebug.Views
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ucDebug.Show();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
